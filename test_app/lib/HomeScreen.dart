@@ -37,10 +37,15 @@ class _MyHomePageState extends State<MyHomePage> {
               '${counter.count}',
               style: Theme.of(context).textTheme.headlineMedium,
             ),
+            FloatingActionButton(
+              onPressed: () {},
+              child: const Icon(Icons.add),
+            )
           ],
         ),
       ),
       floatingActionButton: FloatingActionButton(
+        key: const Key('increament'),
         onPressed: _incrementCounter,
         tooltip: 'Increment',
         child: const Icon(Icons.add),

@@ -12,7 +12,7 @@ void main() {
     final ctr2 = find.text('1');
     expect(ctr2, findsNothing);
 
-    final increment = find.byType(FloatingActionButton);
+    final increment = find.byKey(const Key('increament'));
     await tester.tap(increment);
     await tester.pump();
     final ctr3 = find.text('1');
