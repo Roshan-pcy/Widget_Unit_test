@@ -11,5 +11,18 @@ void main() {
     expect(ctr, findsOne);
     final ctr2 = find.text('1');
     expect(ctr2, findsNothing);
+
+    final increment = find.byType(FloatingActionButton);
+    await tester.tap(increment);
+    await tester.pump();
+    final ctr3 = find.text('1');
+    expect(ctr3, findsOne);
+    final ctr4 = find.text('0');
+    expect(ctr4, findsNothing);
+    expect(
+        find.byType(
+          AppBar,
+        ),
+        findsOne);
   });
 }
