@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:test_app/HomeScreen.dart';
 import 'package:test_app/NewHome.dart';
 import 'package:test_app/counter.dart';
+import 'package:test_app/userrepo.dart';
 
 void main() {
   runApp(const MyApp());
@@ -20,7 +21,9 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const NewHome(),
+      home: NewHome(
+        user: Userrepo().fetchUser(),
+      ),
     );
   }
 }
