@@ -7,10 +7,10 @@ class Userrepo {
   Future<List<User>> fetchUser() async {
     final response =
         await http.get(Uri.parse('https://jsonplaceholder.typicode.com/users'));
-    print('response body +${response}');
-    if (response == 200) {
+
+    if (response.statusCode == 200) {
       final List<dynamic> jsonList = json.decode(response.body);
-      print(jsonList);
+
       return jsonList.map((e) => User.fromJson(e)).toList();
     } else {
       throw Exception('failed to fecth');
