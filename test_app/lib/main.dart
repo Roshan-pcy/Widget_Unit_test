@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:test_app/HomeScreen.dart';
 import 'package:test_app/NewHome.dart';
+import 'package:test_app/animation.dart';
 import 'package:test_app/counter.dart';
 import 'package:test_app/userrepo.dart';
 
@@ -15,15 +16,12 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        // tested with just a hot reload.
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
-      ),
-      home: NewHome(
-        user: Userrepo().fetchUser(),
-      ),
-    );
+        title: 'Flutter Demo',
+        theme: ThemeData(
+          // tested with just a hot reload.
+          colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+          useMaterial3: true,
+        ),
+        home: const AnimationWidget());
   }
 }
