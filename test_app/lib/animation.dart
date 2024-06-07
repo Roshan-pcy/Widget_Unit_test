@@ -18,14 +18,11 @@ class _AnimationWidgetState extends State<AnimationWidget>
   void initState() {
     super.initState();
     _animationcontroller =
-        AnimationController(vsync: this, duration: const Duration(seconds: 4));
-    _widthAnimation = Tween<double>(begin: 0, end: 190).animate(
+        AnimationController(vsync: this, duration: const Duration(seconds: 2));
+    _widthAnimation = Tween<double>(begin: 10.0, end: 190.0).animate(
         CurvedAnimation(parent: _animationcontroller, curve: Curves.easeInOut));
-    _colorAnimation = ColorTween(
-            begin: Color.fromARGB(255, 228, 68, 228),
-            end: const Color.fromARGB(255, 47, 206, 52))
-        .animate(CurvedAnimation(
-            parent: _animationcontroller, curve: Curves.easeInOut));
+    _colorAnimation = ColorTween(begin: Colors.pink, end: Colors.green).animate(
+        CurvedAnimation(parent: _animationcontroller, curve: Curves.easeInOut));
     _borderRadius = Tween<double>(begin: 0.0, end: 30).animate(
         CurvedAnimation(parent: _animationcontroller, curve: Curves.easeInOut));
     _animationcontroller.forward();
